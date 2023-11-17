@@ -15,7 +15,7 @@ class ContactsCircleRelationsTest(unittest.TestCase):
         cls.TRABALHO = "trabalho"
         cls.FAMILIA = "familia"
         cls.VANESSA_EMAIL = "vanessa@ufc.br"
-        cls.VANESSA = "vanessa"
+        cls.VANESSA = "joaquim"
         cls.ANA_EMAIL = "ana@ufc.br"
         cls.ANA = "ana"
         cls.MARIO_EMAIL = "mario@ufc.br"
