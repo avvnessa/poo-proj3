@@ -1,0 +1,2 @@
+class Espiral:
+    pass
