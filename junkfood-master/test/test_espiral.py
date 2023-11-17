@@ -2,7 +2,6 @@ import unittest
 
 from src.espiral import Espiral
 
-
 class TestEspiral(unittest.TestCase):
 
     def testInicializacao(self):

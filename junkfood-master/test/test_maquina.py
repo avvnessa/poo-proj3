@@ -2,7 +2,6 @@ import unittest
 
 from src.maquina import Maquina
 
-
 class TestMaquina(unittest.TestCase):
 
     def testInicializacao(self):
@@ -168,19 +167,19 @@ class TestMaquina(unittest.TestCase):
                          "Não deve ser possível vender um produto se o indice não corresponder a nenhuma espiral.")
 
     def testVenderProdutoSemDinheiroSuficiente(self):
-        maquina = (3, 4)
+        maquina = Maquina(3, 4)
         self.assertTrue(maquina.alterarEspiral(2, "Guaraná-Antártica", 2, 4.75),
-                        "Deve ser possível alterar as informações da espiral com as descrições do produto se o índice estiver correto.")
+                    "Deve ser possível alterar as informações da espiral com as descrições do produto se o índice estiver correto.")
         self.assertTrue(maquina.alterarEspiral(1, "Coca-Cola", 1, 3.25),
-                        "Deve ser possível alterar as informações da espiral com as descrições do produto se o índice estiver correto.")
+                    "Deve ser possível alterar as informações da espiral com as descrições do produto se o índice estiver correto.")
         maquina.inserirDinheiro(4.70)
         self.assertEqual(4.70, maquina.getSaldoCliente(),
-                         "Deve ser possível um cliente inserir dinheiro na maquina.")
+                     "Deve ser possível um cliente inserir dinheiro na maquina.")
         self.assertFalse(maquina.vender(2),
-                         "Não deve ser possível comprar um produto se o dinheiro inserido na máquina não for suficiente.")
+                     "Não deve ser possível comprar um produto se o dinheiro inserido na máquina não for suficiente.")
         espiral = maquina.getEspiral(2)
         self.assertEqual(2, espiral.getQuantidade(),
-                         "Não deve ser possível alterar a quantidade de produtos se não foi possível vender o produto.")
+                     "Não deve ser possível alterar a quantidade de produtos se não foi possível vender o produto.")
 
     def testVenderProdutoComDinheiroExato(self):
         maquina = Maquina(3, 4)
@@ -196,7 +195,6 @@ class TestMaquina(unittest.TestCase):
         espiral = maquina.getEspiral(1)
         self.assertEqual(0, espiral.getQuantidade(),
                          "Deve ser possível alterar a quantidade de produtos se o foi possível vender o produto.")
-
 
 if __name__ == '__main__':
     unittest.main()
